@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "together_alone",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "http": "0.0.1-security",
+    "uuid": "^7.0.3",
+    "websocket": "^1.0.31"
+  }
 }
