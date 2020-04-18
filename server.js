@@ -2,13 +2,13 @@
 // Optional. You will see this name in eg. 'ps' or 'top' command
 process.title = 'node-chat';
 // Port where we'll run the websocket server
-var webSocketsServerPort = 1337;
+var webSocketsServerPort = process.env.PORT;
 // websocket and http servers
 var webSocketServer = require('websocket').server;
 var http = require('http');
 var uuid = require('uuid');
 /**
- * Global variables
+ * Global variablesheruko
  */
 // list of currently connected clients (users)
 var clients = [ ];
