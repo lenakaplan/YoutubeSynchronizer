@@ -45,7 +45,6 @@
     var done = false;
     function onPlayerStateChange(event) {
         if (event.data === YT.PlayerState.PLAYING) {
-
             var obj = {
                 time: player.getCurrentTime(),
                 event: "play"
@@ -58,6 +57,7 @@
             };
             broadcast(JSON.stringify(obj));
         }
+        lastSentMessage = Date.now()
     }
     function stopVideo() {
         player.stopVideo();

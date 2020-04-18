@@ -2,6 +2,7 @@
     "use strict";
     // for better performance - to avoid searching in DOM
     var videoId = "";
+    var lastSentMessage = null;
     // if user is running mozilla then use it's built-in WebSocket
     window.WebSocket = window.WebSocket || window.MozWebSocket;
     // if browser doesn't support WebSocket, just show
@@ -31,6 +32,9 @@
         // always returns JSON this should work without any problem but
         // we should make sure that the massage is not chunked or
         // otherwise damaged.
+        if (Date.now() - lastSentMessage < 500){
+            return;
+        }
         try {
             var json = JSON.parse(message.data);
             if (json.event === 'play'){
