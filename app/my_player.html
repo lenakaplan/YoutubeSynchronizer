@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
-<head><script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-</script>
-    <script src="./client.js"></script></head>
+<head>
+<script src="./client.js"></script>
+</head>
 <body>
 <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 <div id="player"></div>
@@ -18,11 +17,15 @@
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
     var player;
+
+    var urlParams = new URLSearchParams(window.location.search);
+    videoId = urlParams.get('video');
+
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
             height: '390',
             width: '640',
-            videoId: 'ka5jXBR-mww',
+            videoId: videoId,
             events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
@@ -63,4 +66,3 @@
 </script>
 
 </body>
-</html>

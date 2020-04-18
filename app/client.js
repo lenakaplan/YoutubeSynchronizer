@@ -1,10 +1,7 @@
 // $(function () {
     "use strict";
     // for better performance - to avoid searching in DOM
-    var content = $('#content');
-    var input = $('#input');
-    var status = $('#status');
-
+    var videoId = "";
     // if user is running mozilla then use it's built-in WebSocket
     window.WebSocket = window.WebSocket || window.MozWebSocket;
     // if browser doesn't support WebSocket, just show
